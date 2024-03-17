@@ -1,16 +1,19 @@
 import React from "react";
-import { Text, View, SafeAreaView, StyleSheet, Button } from "react-native";
+import {
+  Text,
+  View,
+  SafeAreaView,
+  StyleSheet,
+  Button,
+  Pressable,
+} from "react-native";
 import { Feather } from "@expo/vector-icons";
+// import { SearchBar } from "react-native-elements";
 
 const CurrentWeather = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.wrCurrentWeatherer}>
-      <View
-        style={[
-          styles.container,
-          { backgroundColor: "linear-gradient(90deg, pink, #ffb8d1)" },
-        ]}
-      >
+      <View style={[styles.container, { backgroundColor: "#287fd7" }]}>
         <Text style={styles.cityName}>Berlin</Text>
 
         <Feather
@@ -22,38 +25,43 @@ const CurrentWeather = ({ navigation }) => {
         <Text style={styles.temperature}>27°</Text>
         <Text style={styles.day}>Monday, Today</Text>
         {/* 1 row 3 columns each having 3 rows */}
-        <View style={styles.flexRow}>
+        <View
+          style={[
+            styles.flexRow,
+            { backgroundColor: "#226ba3", borderRadius: 30 },
+          ]}
+        >
           <View style={{ flex: 1 }}>
             <View style={styles.flexRow}>
-              <Text>Hello</Text>
+              <Feather name="wind" size={20} color="white" />
             </View>
             <View style={styles.flexRow}>
-              <Text>Hello</Text>
+              <Text style={{ color: "white" }}>15km/h</Text>
             </View>
             <View style={styles.flexRow}>
-              <Text>Hello</Text>
+              <Text style={{ color: "white" }}>Wind</Text>
             </View>
           </View>
           <View style={{ flex: 1 }}>
             <View style={styles.flexRow}>
-              <Text>Hello</Text>
+              <Feather name="droplet" size={20} color="white" />
             </View>
             <View style={styles.flexRow}>
-              <Text>Hello</Text>
+              <Text style={{ color: "white" }}>30%</Text>
             </View>
             <View style={styles.flexRow}>
-              <Text>Hello</Text>
+              <Text style={{ color: "white" }}>Humidity</Text>
             </View>
           </View>
           <View style={{ flex: 1 }}>
             <View style={styles.flexRow}>
-              <Text>Hello</Text>
+              <Feather name="umbrella" size={20} color="white" />
             </View>
             <View style={styles.flexRow}>
-              <Text>Hello</Text>
+              <Text style={{ color: "white" }}>87%</Text>
             </View>
             <View style={styles.flexRow}>
-              <Text>Hello</Text>
+              <Text style={{ color: "white" }}>Chance of Rain</Text>
             </View>
           </View>
         </View>
@@ -105,10 +113,21 @@ const CurrentWeather = ({ navigation }) => {
               { justifyContent: "center", marginTop: 30 },
             ]}
           >
-            <Button
+            {/*
+          <Button
+              style={styles.button}
               title="5 day Forecast"
-              onPress={() => navigation.navigate("")}
+              onPress={() => navigation.navigate("5 Day Forecast")}
+              titleStyle={{ color: "white" }} // Customize text color
+              buttonStyle={{ backgroundColor: "black", borderRadius: 30 }}
             />
+          */}
+            <Pressable
+              style={styles.button}
+              onPress={() => navigation.navigate("5 Day Forecast")}
+            >
+              <Text style={styles.buttonText}>5 Days Forecast</Text>
+            </Pressable>
           </View>
         </View>
       </View>
@@ -146,7 +165,7 @@ const styles = StyleSheet.create({
   },
   footer: {
     flex: 1,
-    backgroundColor: "#CFF1E5",
+    backgroundColor: "#fff",
     width: "90%",
     padding: 10,
     marginTop: 10,
@@ -154,6 +173,22 @@ const styles = StyleSheet.create({
     borderColor: "#1C5F48",
     borderTopLeftRadius: 50,
     borderTopRightRadius: 50,
+  },
+  button: {
+    alignItems: "center",
+    justifyContent: "center",
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    borderRadius: 40,
+    elevation: 3,
+    backgroundColor: "black",
+  },
+  buttonText: {
+    fontSize: 16,
+    lineHeight: 21,
+    fontWeight: "bold",
+    letterSpacing: 0.25,
+    color: "white",
   },
 });
 export default CurrentWeather;
