@@ -21,10 +21,10 @@ const InfoBox = (props) => {
           <Feather name="wind" size={20} color="white" />
         </View>
         <View style={styles.flexRow}>
-          <Text style={{ color: "white" }}>{wind}</Text>
+          <Text style={{ color: "white", fontSize: 17 }}>{wind}</Text>
         </View>
         <View style={styles.flexRow}>
-          <Text style={{ color: "white" }}>Wind</Text>
+          <Text style={{ color: "white", fontSize: 19 }}>Wind</Text>
         </View>
       </View>
       <View style={{ flex: 1 }}>
@@ -32,10 +32,10 @@ const InfoBox = (props) => {
           <Feather name="droplet" size={20} color="white" />
         </View>
         <View style={styles.flexRow}>
-          <Text style={{ color: "white" }}>{humidity}</Text>
+          <Text style={{ color: "white", fontSize: 17 }}>{humidity}</Text>
         </View>
         <View style={styles.flexRow}>
-          <Text style={{ color: "white" }}>Humidity</Text>
+          <Text style={{ color: "white", fontSize: 19 }}>Humidity</Text>
         </View>
       </View>
       <View style={{ flex: 1 }}>
@@ -43,10 +43,10 @@ const InfoBox = (props) => {
           <Feather name="umbrella" size={20} color="white" />
         </View>
         <View style={styles.flexRow}>
-          <Text style={{ color: "white" }}>{chanceOfRain}</Text>
+          <Text style={{ color: "white", fontSize: 17 }}>{chanceOfRain}</Text>
         </View>
         <View style={styles.flexRow}>
-          <Text style={{ color: "white" }}>Chance of Rain</Text>
+          <Text style={{ color: "white", fontSize: 19 }}>Rain</Text>
         </View>
       </View>
     </View>

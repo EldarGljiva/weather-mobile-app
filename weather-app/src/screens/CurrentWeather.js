@@ -5,6 +5,8 @@ import {
   SafeAreaView,
   StyleSheet,
   ImageBackground,
+  TextInput,
+  Dimensions,
 } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import InfoBox from "../components/InfoBox";
@@ -16,11 +18,24 @@ const CurrentWeather = ({ navigation }) => {
     <SafeAreaView style={styles.wrCurrentWeatherer}>
       <ImageBackground
         source={require("../../assets/images/sky.png")}
-        style={styles.background}
+        style={[
+          styles.background,
+          {
+            /* This code makes background image not move once we press on TextInput */
+          },
+          {
+            position: "absolute",
+            left: 0,
+            top: 0,
+            width: Dimensions.get("window").width,
+            height: Dimensions.get("window").height,
+          },
+        ]}
       >
-        {/* <SearchBar placeholder="Type Here..." /> */}
-        {/* Starting Information */}
         <View style={styles.container}>
+          {/* Search bar here */}
+          <TextInput style={styles.input} placeholder="Search"></TextInput>
+          {/* Starting Information */}
           <Text style={styles.cityName}>Berlin</Text>
           <Feather
             style={styles.weatherIcon}
@@ -31,7 +46,11 @@ const CurrentWeather = ({ navigation }) => {
           <Text style={styles.temperature}>27°</Text>
           <Text style={styles.day}>Monday, Today</Text>
           {/* infoBox.js */}
-          <InfoBox wind={2} humidity={3} chanceOfRain={4} />
+          <InfoBox
+            wind={2 + "km/h"}
+            humidity={33 + "%"}
+            chanceOfRain={40 + "%"}
+          />
           {/* Footer */}
           <Footer navigation={navigation} />
         </View>
@@ -58,7 +77,6 @@ const styles = StyleSheet.create({
     color: "white",
   },
   weatherIcon: {
-    marginTop: 20,
     fontSize: 100,
     color: "yellow",
   },
@@ -76,6 +94,14 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     margin: 10,
+  },
+  input: {
+    fontSize: 20,
+    padding: 10,
+    borderRadius: 50,
+    marginTop: 10,
+    backgroundColor: "white",
+    width: "50%",
   },
 });
 

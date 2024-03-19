@@ -13,13 +13,15 @@ const Box = (props) => {
       >
         <View style={styles.flexRow}>
           <View style={styles.item}>
-            <Text>{day}</Text>
+            <Text style={{ color: "white", fontSize: 20 }}>{day}</Text>
           </View>
           <View style={styles.item}>
             <Feather name="sun" size={24} color="white" />
           </View>
           <View style={styles.item}>
-            <Text>{typeOfWeather}</Text>
+            <Text style={{ color: "white", fontSize: 20 }}>
+              {typeOfWeather}
+            </Text>
           </View>
         </View>
       </LinearGradient>

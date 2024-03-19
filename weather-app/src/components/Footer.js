@@ -16,7 +16,7 @@ const Footer = ({ navigation }) => {
       >
         <Pressable
           style={styles.button}
-          onPress={() => navigation.navigate("5 Day Forecast")}
+          onPress={() => navigation.navigate("5 Days Forecast")}
         >
           <Text style={styles.buttonText}>5 Days Forecast</Text>
         </Pressable>

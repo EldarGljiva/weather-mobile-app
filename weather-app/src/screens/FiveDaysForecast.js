@@ -2,7 +2,7 @@ import React from "react";
 import { Text, View, SafeAreaView, StyleSheet } from "react-native";
 import Box from "../components/Box";
 
-const FiveDayForecast = ({}) => {
+const FiveDaysForecast = ({}) => {
   return (
     <View style={styles.container}>
       <Box day="Monday" typeOfWeather="sunny"></Box>
@@ -28,4 +28,4 @@ const styles = StyleSheet.create({
     margin: 10,
   },
 });
-export default FiveDayForecast;
+export default FiveDaysForecast;
